@@ -1,3 +1,13 @@
+17/11/2023
+    pose estimation working, all that is required now is to do the detection part of it
+    up for debate if i follow machine learning or i try something else
+    might look at other pose estimation libraries to play around with them
+    current set up
+        openCV for video feed
+        mediapipe for pose estimation
+        numpy for array stuff
+        
+
 absl-py==2.0.0
 astunparse==1.6.3
 attrs==23.1.0

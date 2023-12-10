@@ -1,5 +1,9 @@
 """
 using tensorflow for this shit
+install briefcase
+python -m pip isntall briefcase
+
+actually, maybe kivy would work, just gotta figure out how
 """
 
 """

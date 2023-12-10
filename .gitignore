@@ -1,9 +1,3 @@
 # 17/11/2023 renamed mpholistic.py to functions.py, add new files listed at the bottom
-*
-!.gitignore
-!main.py
-!README.md
-
-!functions.py
-
-!folders_set-up.py
+__pycache__/
+.venv/

@@ -1,3 +1,8 @@
+"""
+Doesnt work lmao
+"""
+
+
 import cv2
 import mediapipe as mp
 from kivy.app import App

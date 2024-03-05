@@ -1,4 +1,5 @@
 """ 
+
     ,"Ano", MOV
     "Ano_ang_pangalan_mo", mp4
     "Bukas", MOV
@@ -19,16 +20,6 @@
     "Please",
     "Sino" 
     
-    "Ang_Pangalan_Ko",
-    "Ano_Ang_Pangalan_Mo",
-    "Hello",
-    "Hindi",
-    "Kamusta_Ka",
-    "Magandang_Gabi",
-    "Magandang_Umaga",
-    "Okay_Lang_Ako",
-    "Oo",
-    "Pasensya_Na"
 """
 
 import cv2
@@ -36,14 +27,14 @@ import os
 import numpy as np
 import functions
 
-actions = [
-    "Ang_Pangalan_Ko",
-    "Ano"
-]
+actions = np.array([
+    "Ang_Pangalan_Ko"#,
+    #"Ano"
+])
 
 dirname = os.path.dirname(__file__)
 
-with functions.mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=0.5) as holistic: #0.5, 0.5 may change
+with functions.mp_holistic.Hands(min_detection_confidence=0.3, min_tracking_confidence=0.3) as holistic: #0.5, 0.5 may change
     for action in actions:
         for i in range(77):
             frameNr = 0

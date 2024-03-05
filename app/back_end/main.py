@@ -20,7 +20,7 @@ import functions
 cap = cv2.VideoCapture(0)                       # webcam access
 
 # set mediapipe model
-with functions.mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=0.5) as holistic: #0.5, 0.5 may change
+with functions.mp_holistic.Hands(min_detection_confidence=0.3, min_tracking_confidence=0.3) as holistic: #0.5, 0.5 may change
     while cap.isOpened():                           # loop
         # read camera feed
         ret, frame = cap.read()    

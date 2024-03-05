@@ -1,5 +1,4 @@
 """ 
-
     ,"Ano", MOV
     "Ano_ang_pangalan_mo", mp4
     "Bukas", MOV
@@ -20,6 +19,16 @@
     "Please",
     "Sino" 
     
+    "Ang_Pangalan_Ko",
+    "Ano_Ang_Pangalan_Mo",
+    "Hello",
+    "Hindi",
+    "Kamusta_Ka",
+    "Magandang_Gabi",
+    "Magandang_Umaga",
+    "Okay_Lang_Ako",
+    "Oo",
+    "Pasensya_Na"
 """
 
 import cv2
@@ -36,7 +45,7 @@ dirname = os.path.dirname(__file__)
 
 with functions.mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=0.5) as holistic: #0.5, 0.5 may change
     for action in actions:
-        for i in range(7):
+        for i in range(77):
             frameNr = 0
             flepath = dirname+"\\MP_Data\\"+action
             capture = cv2.VideoCapture(flepath+"\\"+action+"_"+str(i + 1)+".mp4")

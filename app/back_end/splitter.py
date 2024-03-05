@@ -20,6 +20,16 @@
     "Please",
     "Sino" 
     
+    "Ang_Pangalan_Ko",
+    "Ano_Ang_Pangalan_Mo",
+    "Hello",
+    "Hindi",
+    "Kamusta_Ka",
+    "Magandang_Gabi",
+    "Magandang_Umaga",
+    "Okay_Lang_Ako",
+    "Oo",
+    "Pasensya_Na"
 """
 
 import cv2

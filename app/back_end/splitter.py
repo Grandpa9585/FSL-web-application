@@ -46,9 +46,12 @@ with functions.mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_c
                 if success:
                     image, results = functions.media_pipedetection(frame, holistic)
 
-                    functions.draw_landmarks(image, results)
+                    keypoints = functions.extract_keypoints(results)
+                    npy_path = flepath+"\\"+str(i + 1)+"\\"+str(frameNr)
+                    np.save(npy_path, keypoints)
 
-                    cv2.imwrite(flepath+"\\"+str(i + 1)+"\\"+str(frameNr)+".jpg", image)
+                    # functions.draw_landmarks(image, results)
+                    # cv2.imwrite(flepath+"\\"+str(i + 1)+"\\"+str(frameNr)+".jpg", image)
                 else:
                     break
 

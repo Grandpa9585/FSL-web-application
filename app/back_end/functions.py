@@ -32,10 +32,10 @@ def extract_keypoints(results):
     # if the points exists, put the points in an array [x, y, z, a(if applicable)] then
     # "flattens" the multidimensioal array
     # else return an array thats full of zeroes
-    pose = np.array([[res.x, res.y, res.z, res.visibility] for res in results.pose_landmark]).flatten() if results.pose_landmarks else np.zeros(33*4)
-    face = np.array([[res.x, res.y, res.z] for res in results.face_landmark]).flatten() if results.face_landmarks else np.zeros(468*3)
-    left_hand = np.array([[res.x, res.y, res.z] for res in results.left_hand_landmark]).flatten() if results.left_hand_landmarks else np.zeros(21*3)
-    right_hand = np.array([[res.x, res.y, res.z] for res in results.right_hand_landmark]).flatten() if results.right_hand_landmarks else np.zeros(21*3)
+    pose = np.array([[res.x, res.y, res.z, res.visibility] for res in results.pose_landmarks]).flatten() if results.pose_landmarks else np.zeros(33*4)
+    face = np.array([[res.x, res.y, res.z] for res in results.face_landmarks]).flatten() if results.face_landmarks else np.zeros(468*3)
+    left_hand = np.array([[res.x, res.y, res.z] for res in results.left_hand_landmarks]).flatten() if results.left_hand_landmarks else np.zeros(21*3)
+    right_hand = np.array([[res.x, res.y, res.z] for res in results.right_hand_landmarks]).flatten() if results.right_hand_landmarks else np.zeros(21*3)
     # returns a giant array that has all of the points
     # this is the output values for a frame for use in any algorithm
     return np.concatenate([pose, face, left_hand, right_hand])

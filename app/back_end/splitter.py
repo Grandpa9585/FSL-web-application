@@ -49,7 +49,7 @@ with functions.mp_holistic.Hands(min_detection_confidence=0.3, min_tracking_conf
             frameNr = 0
             flepath = dirname+"\\MP_Data\\"+action
             capture = cv2.VideoCapture(flepath+"\\"+action+"_"+str(i + 1)+".mp4")
-            print(flepath+"\\"+action+"_"+str(i + 1)+".mp4")
+            print(action+"_"+str(i + 1)+".mp4 out of 77")
             while(True):
                 success, frame = capture.read()
 

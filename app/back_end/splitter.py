@@ -25,7 +25,7 @@
     / "Hello",
     / "Hindi",
     / "Kamusta_Ka",
-    "Magandang_Gabi",
+    / "Magandang_Gabi",
     "Magandang_Umaga",
     "Okay_Lang_Ako",
     "Oo",

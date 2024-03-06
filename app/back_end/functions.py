@@ -41,6 +41,8 @@ def extract_keypoints(results):
     
     if results.multi_hand_landmarks:
         for num, hand in enumerate(results.multi_hand_landmarks):
+            if num == 2:
+                break
             arr[num] = np.array([[res.x, res.y, res.z] for res in hand.landmark]).flatten()
     # returns a giant array that has all of the points
     # this is the output values for a frame for use in any algorithm

@@ -45,7 +45,7 @@ dirname = os.path.dirname(__file__)
 
 with functions.mp_holistic.Hands(min_detection_confidence=0.3, min_tracking_confidence=0.3, max_num_hands=2) as holistic: #0.5, 0.5 may change
     for action in actions:
-        for i in range(77):
+        for i in range(77): # 77
             frameNr = 0
             flepath = dirname+"\\MP_Data\\"+action
             capture = cv2.VideoCapture(flepath+"\\"+action+"_"+str(i + 1)+".mp4")
@@ -59,9 +59,9 @@ with functions.mp_holistic.Hands(min_detection_confidence=0.3, min_tracking_conf
                     functions.draw_landmarks(image, results)
                     cv2.imwrite(flepath+"\\"+str(i + 1)+"\\"+str(frameNr)+".jpg", image)
 
-                    keypoints = functions.extract_keypoints(results)
-                    npy_path = flepath+"\\"+str(i + 1)+"\\"+str(frameNr)
-                    np.save(npy_path, keypoints)
+                    # keypoints = functions.extract_keypoints(results)
+                    # npy_path = flepath+"\\"+str(i + 1)+"\\"+str(frameNr)
+                    # np.save(npy_path, keypoints)
                 else:
                     break
 

@@ -28,7 +28,7 @@
     / "Magandang_Gabi",
     / "Magandang_Umaga",
     / "Okay_Lang_Ako",
-    "Oo",
+    / "Oo",
     / "Pasensya_Na"
 """
 

@@ -38,7 +38,7 @@ import numpy as np
 import functions
 
 actions = np.array([
-    "Ano_Ang_Pangalan_Mo"
+    "Hello"
 ])
 
 dirname = os.path.dirname(__file__)

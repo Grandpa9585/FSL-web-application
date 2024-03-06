@@ -60,6 +60,7 @@ with functions.mp_holistic.Hands(min_detection_confidence=0.3, min_tracking_conf
                     npy_path = flepath+"\\"+str(i + 1)+"\\"+str(frameNr)
                     np.save(npy_path, keypoints)
 
+                    print(npy_path)
                     # functions.draw_landmarks(image, results)
                     # cv2.imwrite(flepath+"\\"+str(i + 1)+"\\"+str(frameNr)+".jpg", image)
                 else:

@@ -38,20 +38,20 @@ import numpy as np
 import functions
 
 actions = np.array([
-    "Ang_Pangalan_Ko"#,
-    #"Ano"
+    "Ano_Ang_Pangalan_Mo"
 ])
 
 dirname = os.path.dirname(__file__)
 
 with functions.mp_holistic.Hands(min_detection_confidence=0.3, min_tracking_confidence=0.3) as holistic: #0.5, 0.5 may change
     for action in actions:
-        for i in range(77):
+        for i in range(1):
             frameNr = 0
             flepath = dirname+"\\MP_Data\\"+action
             capture = cv2.VideoCapture(flepath+"\\"+action+"_"+str(i + 1)+".mp4")
             while(True):
                 success, frame = capture.read()
+                print(flepath)
 
                 if success:
                     image, results = functions.media_pipedetection(frame, holistic)
@@ -60,7 +60,6 @@ with functions.mp_holistic.Hands(min_detection_confidence=0.3, min_tracking_conf
                     npy_path = flepath+"\\"+str(i + 1)+"\\"+str(frameNr)
                     np.save(npy_path, keypoints)
 
-                    print(npy_path)
                     # functions.draw_landmarks(image, results)
                     # cv2.imwrite(flepath+"\\"+str(i + 1)+"\\"+str(frameNr)+".jpg", image)
                 else:

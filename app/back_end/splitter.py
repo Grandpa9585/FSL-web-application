@@ -23,7 +23,7 @@
     / "Ang_Pangalan_Ko",
     / "Ano_Ang_Pangalan_Mo",
     / "Hello",
-    "Hindi",
+    / "Hindi",
     "Kamusta_Ka",
     "Magandang_Gabi",
     "Magandang_Umaga",

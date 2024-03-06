@@ -39,7 +39,7 @@ import numpy as np
 import functions
 
 actions = np.array([
-    "Kahapon"
+    "Ngayon"
 ])
 
 dirname = os.path.dirname(__file__)

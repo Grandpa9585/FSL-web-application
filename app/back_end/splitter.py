@@ -24,7 +24,7 @@
     / "Ano_Ang_Pangalan_Mo",
     / "Hello",
     / "Hindi",
-    "Kamusta_Ka",
+    / "Kamusta_Ka",
     "Magandang_Gabi",
     "Magandang_Umaga",
     "Okay_Lang_Ako",
@@ -38,7 +38,7 @@ import numpy as np
 import functions
 
 actions = np.array([
-    "Kamusta_Ka"
+    "Magandang_Gabi"
 ])
 
 dirname = os.path.dirname(__file__)

@@ -38,9 +38,18 @@ import numpy as np
 import functions
 
 actions = np.array([
+    "Ang_Pangalan_Ko",
+    "Ano_Ang_Pangalan_Mo",
+    "Hello",
+    "Hindi",
+    "Kamusta_Ka",
     "Magandang_Gabi"
 ])
 
+dirname = os.path.dirname(__file__)
+flepath = dirname+"\\MP_Data\\"
+
+"""
 dirname = os.path.dirname(__file__)
 
 with functions.mp_holistic.Hands(min_detection_confidence=0.3, min_tracking_confidence=0.3, max_num_hands=2) as holistic: #0.5, 0.5 may change
@@ -66,3 +75,4 @@ with functions.mp_holistic.Hands(min_detection_confidence=0.3, min_tracking_conf
                     break
 
                 frameNr+=1
+"""

@@ -26,7 +26,9 @@ def draw_landmarks(image, results):
     # mp_drawing.draw_landmarks(image, results.pose_landmarks, mp_holistic.POSE_CONNECTIONS)
     if results.multi_hand_landmarks:
         for num, hand in enumerate(results.multi_hand_landmarks):
-            mp_drawing.draw_landmarks(image, hand, mp_holistic.HAND_CONNECTIONS)
+            mp_drawing.draw_landmarks(image, hand, mp_holistic.HAND_CONNECTIONS,
+                                      mp_drawing.DrawingSpec(color=(121/(num+1), 22*num, 76), thickness=2, circle_radius=2)
+                                      )
 
 def extract_keypoints(results):
     # extracts the points of the landmarks

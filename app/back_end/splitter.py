@@ -20,8 +20,8 @@
     "Please",
     "Sino" 
     
-    "Ang_Pangalan_Ko",
-    "Ano_Ang_Pangalan_Mo",
+    / "Ang_Pangalan_Ko",
+    / "Ano_Ang_Pangalan_Mo",
     "Hello",
     "Hindi",
     "Kamusta_Ka",
@@ -56,12 +56,12 @@ with functions.mp_holistic.Hands(min_detection_confidence=0.3, min_tracking_conf
                 if success:
                     image, results = functions.media_pipedetection(frame, holistic)
 
-                    functions.draw_landmarks(image, results)
-                    cv2.imwrite(flepath+"\\"+str(i + 1)+"\\"+str(frameNr)+".jpg", image)
+                    # functions.draw_landmarks(image, results)
+                    # cv2.imwrite(flepath+"\\"+str(i + 1)+"\\"+str(frameNr)+".jpg", image)
 
-                    # keypoints = functions.extract_keypoints(results)
-                    # npy_path = flepath+"\\"+str(i + 1)+"\\"+str(frameNr)
-                    # np.save(npy_path, keypoints)
+                    keypoints = functions.extract_keypoints(results)
+                    npy_path = flepath+"\\"+str(i + 1)+"\\"+str(frameNr)
+                    np.save(npy_path, keypoints)
                 else:
                     break
 

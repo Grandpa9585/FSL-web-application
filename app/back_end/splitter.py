@@ -29,8 +29,8 @@
     / "Magandang_Umaga",
     / "Okay_Lang_Ako",
     "Oo",
-    "Pasensya_Na"
-"""""
+    / "Pasensya_Na"
+"""
 
 import cv2
 import os
@@ -38,18 +38,13 @@ import numpy as np
 import functions
 
 actions = np.array([
-    "Ang_Pangalan_Ko",
-    "Ano_Ang_Pangalan_Mo",
-    "Hello",
-    "Hindi",
-    "Kamusta_Ka",
-    "Okay_Lang_Ako"
+    "Oo"
 ])
 
 dirname = os.path.dirname(__file__)
 flepath = dirname+"\\MP_Data\\"
 
-""
+
 dirname = os.path.dirname(__file__)
 
 with functions.mp_holistic.Hands(min_detection_confidence=0.3, min_tracking_confidence=0.3, max_num_hands=2) as holistic: #0.5, 0.5 may change

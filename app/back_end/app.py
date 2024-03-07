@@ -32,13 +32,17 @@ def gen_frame():
             if not success:
                 break
             else:
+                width = 1920
+                height = 1080
+                # cropped = img[start_row:end_row, start_col:end_col]
+
                 image, results = functions.media_pipedetection(frame, holistic)
                 model = Sequential()
                 model.load_weights('ExpandedWordList4.h5')
 
                 functions.draw_landmarks(image, results)
 
-                # prediction
+                # prediction 1920 x 1080
                 keypoints = functions.extract_keypoints(results)
                 sequence.append(keypoints)
                 sequence = sequence[-109:]

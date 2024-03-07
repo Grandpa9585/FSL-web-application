@@ -34,7 +34,7 @@ def gen_frame():
             else:
                 image, results = functions.media_pipedetection(frame, holistic)
                 model = Sequential()
-                model.load_weights('action.h5')
+                model.load_weights('ExpandedWordList4.h5')
 
                 functions.draw_landmarks(image, results)
 

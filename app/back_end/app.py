@@ -19,6 +19,9 @@ app = Flask(__name__)
 
 camera = cv2.VideoCapture(0)
 
+camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
+camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
+
 import splitter
 
 # detection vars

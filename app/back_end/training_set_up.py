@@ -43,9 +43,9 @@ model.add(Dense(splitter.actions.shape[0], activation='softmax'))
 
 model.compile(optimizer='Adam', loss='categorical_crossentropy', metrics=['categorical_accuracy'])
 
-model.fit(X_train, y_train, epochs=100, callbacks=[tb_callback])
+model.fit(X_train, y_train, epochs=50, callbacks=[tb_callback])
 
-model.save('FSLshits3.h5') # todo: change name, weights
+model.save('ExpandedWordList5.h5') # todo: change name, weights
 
 yhat = model.predict(X_test)
 

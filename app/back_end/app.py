@@ -1,11 +1,24 @@
 from flask import Flask, render_template, Response
+
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.utils import to_categorical
+
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import LSTM, Dense
+from tensorflow.keras.callbacks import TensorBoard
+
+from sklearn.metrics import multilabel_confusion_matrix, accuracy_score
+
 import cv2
+import numpy as np
 
 import functions
 
 app = Flask(__name__)
 
 camera = cv2.VideoCapture(0)
+
+import splitter
 
 # detection vars
 sequence = []
@@ -20,13 +33,34 @@ def gen_frame():
                 break
             else:
                 image, results = functions.media_pipedetection(frame, holistic)
+                model = Sequential()
+                model.load_weights('action.h5')
 
                 functions.draw_landmarks(image, results)
 
                 # prediction
                 keypoints = functions.extract_keypoints(results)
                 sequence.append(keypoints)
-                sequence = sequence[:109]
+                sequence = sequence[-109:]
+
+                if len(sequence) == 109:
+                    res = model.predict(np.expand_dims(sequence, axis=0))[0]
+                    print(splitter.actions[np.argmax(res)])
+
+                # display logic
+                if res[np.argmax(res)] > threshold:
+                    if len(sentence) > 0:
+                        if splitter.actions[np.argmax(res)] != sentence[-1]:
+                            sentence.append(splitter.actions[np.argmax(res)])
+                        else:
+                            sentence.append(splitter.actions[np.argmax(res)])
+
+                if len(sentence) > 5:
+                    sentence = sentence[-5:]
+
+                cv2.rectangle(image, (0,0), (640, 40), (245, 117, 16), -1)
+                cv2.putText(image, ' '.join(sentence), (3,30),
+                            cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255), 2, cv2.LINE_AA)
 
                 ret, buffer = cv2.imencode('.jpg', image) # setup for data transmission
                 image = buffer.tobytes()
